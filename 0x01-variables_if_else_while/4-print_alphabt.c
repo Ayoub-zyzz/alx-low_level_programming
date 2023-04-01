@@ -7,24 +7,16 @@
  */
 int main(void)
 {
-	char ch = 'a';
+        char ch = 'a';
 
-	while (ch <= 'z')
-	{
-		if (ch != 'e' && ch != 'q')
-		{
-			putchar(ch);
-		}
-		ch++;
-	}
-	putchar('\n');
-	return (0);
+        while (ch <= 'z')
+        {
+                if (ch != 'e' && ch != 'q')
+                {
+                        putchar(ch);
+                }
+                ch++;
+        }
+        putchar('\n');
+        return (0);
 }
-Footer
-© 2023 GitHub, Inc.
-Footer navigation
-Terms
-Privacy
-Security
-Status
-Docs

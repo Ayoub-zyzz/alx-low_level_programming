@@ -1,6 +1,3 @@
-4-isalpha CODE
-
-
 #include "main.h"
 
 

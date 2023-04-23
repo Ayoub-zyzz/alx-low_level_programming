@@ -1,44 +1,66 @@
-C - Structures, typedef
-TASKS
-0. Poppy
-Define a new type struct dog with the following elements:
+##C - malloc, free
 
-name, type = char *
+####TASKS
 
-age, type = float
+####[0. Float like a butterfly, sting like a bee](0-create_array.c)
 
-owner, type = char *
+- Write a function that creates an array of chars, and initializes it with a specific char.
 
-1. A dog is the only thing on earth that loves you more than you love yourself
-Write a function that initialize a variable of type struct dog
+- Prototype: char *create_array(unsigned int size, char c);
+- Returns NULL if size = 0
+- Returns a pointer to the array, or NULL if it fails
 
-Prototype: void init_dog(struct dog *d, char *name, float age, char *owner);
+####[1. The woman who has no imagination has no wings](1-strdup.c)
 
-2. A dog will teach you unconditional love. If you can have that in your life, things won't be too bad
-Write a function that prints a struct dog
+- Write a function that returns a pointer to a newly allocated space in memory, which contains a copy of the string given as a parameter.
 
-Prototype: void print_dog(struct dog *d);
+- Prototype: char *_strdup(char *str);
+- The _strdup() function returns a pointer to a new string which is a duplicate of the string str. Memory for the new string is obtained with malloc, and can be freed with free.
+- Returns NULL if str = NULL
+- On success, the _strdup function returns a pointer to the duplicated string. It returns NULL if insufficient memory was available
 
-Format: see example bellow
+#### [2. He who is not courageous enough to take risks will accomplish nothing in life](2-str_concat.c)
 
-You are allowed to use the standard library
+- Write a function that concatenates two strings.
 
-If an element of d is NULL, print (nil) instead of this element. (if name is NULL, print Name: (nil))
+- Prototype: char str_concat(char s1, char s2);
+- The returned pointer should point to a newly allocated space in memory which contains the contents of s1, followed by the contents of s2, and null terminated
+if NULL is passed, treat it as an empty string
+- The function should return NULL on failure
 
-If d is NULL print nothing.
+####[3. If you even dream of beating me you'd better wake up and apologize](3-alloc_grid.c)
 
-3. Outside of a dog, a book is a man's best friend. Inside of a dog it's too dark to read
-Define a new type dog_t as a new name for the type struct dog.
-4. A door is what a dog is perpetually on the wrong side of
-Write a function that creates a new dog.
+- Write a function that returns a pointer to a 2 dimensional array of integers.
 
-Prototype: dog_t *new_dog(char *name, float age, char *owner);
+- Prototype: int **alloc_grid(int width, int height);
+- Each element of the grid should be initialized to 0
+- The function should return NULL on failure
+- If width or height is 0 or negative, return NULL
 
-You have to store a copy of name and owner
+####[4. It's not bragging if you can back it up](4-free_grid.c)
 
-Return NULL if the function fails
+Write a function that frees a 2 dimensional grid previously created by your alloc_grid function.
 
-5. How many legs does a dog have if you call his tail a leg? Four. Saying that a tail is a leg doesn't make it a leg
-Write a function that frees dogs.
+Prototype: void free_grid(int **grid, int height);
+Note that we will compile with your alloc-grid.c file. Make sure it compiles.
 
-Prototype: void free_dog(dog_t *d);
+####[5. It isn't the mountains ahead to climb that wear you out; it's the pebble in your shoe](100-argstostr.c)
+
+- Write a function that concatenates all the arguments of your program.
+
+- Prototype: char *argstostr(int ac, char **av);
+- Returns NULL if ac == 0 or av == NULL
+- Returns a pointer to a new string, or NULL if it fails
+- Each argument should be followed by a \n in the new string  
+
+####[6. I will show you how great I am] (101-strtow.c)
+
+- Write a function that splits a string into words.
+
+- Prototype: char **strtow(char *str);
+- The function returns a pointer to an array of strings (words)
+- Each element of this array should contain a single word, null-terminated
+- The last element of the returned array should be NULL
+- Words are separated by spaces
+- Returns NULL if str == NULL or str == ""
+- If your function fails, it should return NULL
